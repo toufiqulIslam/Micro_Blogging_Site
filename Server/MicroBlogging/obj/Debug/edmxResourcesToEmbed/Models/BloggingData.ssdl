@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MicroBloggingData.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="post">
+    <Key>
+      <PropertyRef Name="post_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="post_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar(max)" />
+    <Property Name="like_count" Type="int" Nullable="false" />
+    <Property Name="dislike_count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="reaction">
+    <Key>
+      <PropertyRef Name="reaction_id" />
+    </Key>
+    <Property Name="reaction_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="post_id" Type="int" Nullable="false" />
+    <Property Name="is_liked" Type="varchar" MaxLength="50" />
+    <Property Name="is_disliked" Type="varchar" MaxLength="50" />
+    <Property Name="comment" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MicroBloggingDataStoreContainer">
+    <EntitySet Name="post" EntityType="Self.post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="reaction" EntityType="Self.reaction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

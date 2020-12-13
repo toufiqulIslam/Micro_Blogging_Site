@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MicroBloggingDataStoreContainer" CdmEntityContainer="MicroBloggingDBEntities">
+    <EntitySetMapping Name="posts">
+      <EntityTypeMapping TypeName="MicroBloggingData.post">
+        <MappingFragment StoreEntitySet="post">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="post_id" ColumnName="post_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="like_count" ColumnName="like_count" />
+          <ScalarProperty Name="dislike_count" ColumnName="dislike_count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reactions">
+      <EntityTypeMapping TypeName="MicroBloggingData.reaction">
+        <MappingFragment StoreEntitySet="reaction">
+          <ScalarProperty Name="reaction_id" ColumnName="reaction_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="post_id" ColumnName="post_id" />
+          <ScalarProperty Name="is_liked" ColumnName="is_liked" />
+          <ScalarProperty Name="is_disliked" ColumnName="is_disliked" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="MicroBloggingData.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
