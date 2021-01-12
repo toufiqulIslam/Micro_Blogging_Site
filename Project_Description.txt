@@ -1,0 +1,24 @@
+Micro Blogging Site
+
+Project Description
+  A small microblogging platform where users can post and interact (upvote, downvote, comment)
+  with posts from other users.
+  Requirements.
+  
+Functional Requirements
+  1. Users can create new posts.
+  2. Users can view posts of other users.
+  3. Users can comment on posts of other users.
+  4. Users can upvote/downvote posts of other users.
+  5. Users can view comments of a particular post.
+  6. Users can see upvote and downvote counts of a particular post.       
+  
+Technical Requirements
+  1. System will allow only a single upvote/downvote per post for a user. If a user downvotes
+  previously upvoted post, that upvote should be replaced with a downvote and vice-versa. 
+  2. System should comply with REST architecture.
+  
+Used Technologies
+  1. React (Client)
+  2. ASP.NET (Server)
+  3. Microsoft SQL Server
